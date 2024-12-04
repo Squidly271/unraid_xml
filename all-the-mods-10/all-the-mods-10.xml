@@ -16,7 +16,6 @@ You must accept the EULA by setting the EULA variable to "true" or the installat
   <Category>GameServers:</Category>
   <ExtraSearchTerms>minecraft allthemods10 atm10</ExtraSearchTerms>
   <Icon>https://media.forgecdn.net/avatars/thumbnails/1098/957/256/256/638645426291861588.png</Icon>
-  <ExtraParams>--restart unless-stopped</ExtraParams>
   <Config Name="Installed Location" Target="/data" Default="/mnt/user/appdata/all-the-mods-10/" Mode="rw" Description="Path to store the installed server files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/all-the-mods-10/</Config>
   <Config Name="EULA" Target="EULA" Default="false" Mode="" Description="Do you agree to the Mojang EULA available at https://account.mojang.com/documents/minecraft_eula? Server will not start without accepting. Set to 'true' to accept." Type="Variable" Display="always" Required="true" Mask="false">false</Config>
   <Config Name="JVM_OPTS" Target="JVM_OPTS" Default="-Xms2048m -Xmx4096m" Mode="" Description="JAVA Options" Type="Variable" Display="always" Required="false" Mask="false">-Xms2048m -Xmx4096m</Config>

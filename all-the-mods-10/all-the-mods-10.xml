@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/fl3xm3ist3r/docker-allthemods10/issues</Support>
+  <Support>https://forums.unraid.net/topic/181532-support-all-the-mods-10/</Support>
   <Project>https://www.curseforge.com/minecraft/modpacks/all-the-mods-10</Project>
   <Overview>Unraid Docker Image for Minecraft, All The Mods 10&#xD;
 &#xD;

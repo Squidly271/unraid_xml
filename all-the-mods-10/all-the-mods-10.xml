@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>all-the-mods-10</Name>
+  <Repository>fl3xm3ist3r/all-the-mods-10:latest</Repository>
+  <Registry>https://hub.docker.com/repository/docker/fl3xm3ist3r/all-the-mods-10</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/fl3xm3ist3r/docker-allthemods10/issues</Support>
+  <Project>https://www.curseforge.com/minecraft/modpacks/all-the-mods-10</Project>
+  <Overview>Unraid Docker Image for Minecraft, All The Mods 10&#xD;
+&#xD;
+Setup:&#xD;
+You must accept the EULA by setting the EULA variable to "true" or the installation will fail.</Overview>
+  <Category>GameServers:</Category>
+  <ExtraSearchTerms>minecraft allthemods10 atm10</ExtraSearchTerms>
+  <Icon>https://media.forgecdn.net/avatars/thumbnails/1098/957/256/256/638645426291861588.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <Config Name="Installed Location" Target="/data" Default="/mnt/user/appdata/all-the-mods-10/" Mode="rw" Description="Path to store the installed server files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/all-the-mods-10/</Config>
+  <Config Name="EULA" Target="EULA" Default="false" Mode="" Description="Do you agree to the Mojang EULA available at https://account.mojang.com/documents/minecraft_eula? Server will not start without accepting. Set to 'true' to accept." Type="Variable" Display="always" Required="true" Mask="false">false</Config>
+  <Config Name="JVM_OPTS" Target="JVM_OPTS" Default="-Xms2048m -Xmx4096m" Mode="" Description="JAVA Options" Type="Variable" Display="always" Required="false" Mask="false">-Xms2048m -Xmx4096m</Config>
+  <Config Name="Port" Target="25565" Default="25565" Mode="tcp" Description="Port for the server" Type="Port" Display="always" Required="false" Mask="false">25565</Config>
+</Container>

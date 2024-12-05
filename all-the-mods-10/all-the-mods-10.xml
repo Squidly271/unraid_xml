@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<Container version="2">
+<?xml version="1"?>
+<Container version="1.26">
   <Name>all-the-mods-10</Name>
   <Repository>fl3xm3ist3r/all-the-mods-10:latest</Repository>
   <Registry>https://hub.docker.com/repository/docker/fl3xm3ist3r/all-the-mods-10</Registry>
@@ -7,18 +7,32 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/fl3xm3ist3r/docker-allthemods10/issues</Support>
-  <Project>https://www.curseforge.com/minecraft/modpacks/all-the-mods-10</Project>
+  <Support>https://forums.unraid.net/topic/181532-support-all-the-mods-10/</Support>
+  <Project>https://github.com/fl3xm3ist3r/docker-allthemods10</Project>
   <Overview>Unraid Docker Image for Minecraft, All The Mods 10&#xD;
 &#xD;
 Setup:&#xD;
-You must accept the EULA by setting the EULA variable to "true" or the installation will fail.</Overview>
+- Add a Container Data Path&#xD;
+- Accept the EULA by setting the EULA variable to "true"&#xD;
+&#xD;
+Optional:&#xD;
+- Configure custom Ram usage by setting the JVM_OPTS variable (PS: -Xms4G -Xmx8G is allowed as well)&#xD;
+- Configure and add Users to the Whitelist by setting the ENABLE_WHITELIST variable to "true" and adding Users comma-seperated to WHITELIST_USERS&#xD;
+- Add comma-seperated Users to OP_USERS variable&#xD;
+- Configure a custom Docker Container Port&#xD;
+&#xD;
+Recommendation:&#xD;
+I recommend setting "Extra Paramatesr" as following "--restart unless-stopped". To ensure that the Server restarts after an unknown failure. As Well, restarting the Server every day once isn't bad as well.&#xD;
+</Overview>
   <Category>GameServers:</Category>
   <ExtraSearchTerms>minecraft allthemods10 atm10</ExtraSearchTerms>
+  <TemplateURL>https://raw.githubusercontent.com/fl3xm3ist3r/unraid_xml/master/all-the-mods-10/all-the-mods-10.xml</TemplateURL>
   <Icon>https://media.forgecdn.net/avatars/thumbnails/1098/957/256/256/638645426291861588.png</Icon>
-  <ExtraParams>--restart unless-stopped</ExtraParams>
   <Config Name="Installed Location" Target="/data" Default="/mnt/user/appdata/all-the-mods-10/" Mode="rw" Description="Path to store the installed server files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/all-the-mods-10/</Config>
   <Config Name="EULA" Target="EULA" Default="false" Mode="" Description="Do you agree to the Mojang EULA available at https://account.mojang.com/documents/minecraft_eula? Server will not start without accepting. Set to 'true' to accept." Type="Variable" Display="always" Required="true" Mask="false">false</Config>
   <Config Name="JVM_OPTS" Target="JVM_OPTS" Default="-Xms2048m -Xmx4096m" Mode="" Description="JAVA Options" Type="Variable" Display="always" Required="false" Mask="false">-Xms2048m -Xmx4096m</Config>
+  <Config Name="Enable Whitelist" Target="ENABLE_WHITELIST" Default="true" Mode="" Description="Enable/Disable Whitelist on the Server" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Whitelist Users" Target="WHITELIST_USERS" Default="" Mode="" Description="Add Users comma-seperated to the Whitelist.&#13;&#10;Example Value:&#13;&#10;TestUser1, TestUser2 OR TestUser1,TestUser2" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Op Users" Target="OP_USERS" Default="" Mode="" Description="Add Users comma-seperated to the OP list.&#13;&#10;Example Value:&#13;&#10;TestUser1, TestUser2 OR TestUser1,TestUser2" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Port" Target="25565" Default="25565" Mode="tcp" Description="Port for the server" Type="Port" Display="always" Required="false" Mask="false">25565</Config>
 </Container>
